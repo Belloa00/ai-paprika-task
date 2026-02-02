@@ -90,7 +90,11 @@ Do NOT leave placeholders. Be generic if unsure. Infer informations.
 Website HTML snippet:
 ${snippet}
 
-Return ONLY the final brief, coincise, short sentence.
+Return EXACTLY ONE sentence.
+Do not add punctuation at the beginning or end.
+Do not use line breaks.
+Do not explain.
+Do not rephrase the instruction.
 `;
     const response = UrlFetchApp.fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "post",
@@ -99,8 +103,11 @@ Return ONLY the final brief, coincise, short sentence.
       payload: JSON.stringify({
         model: "meta-llama/llama-3.3-70b-instruct:free",
         messages: [{ role: "user", content: prompt }],
-        max_tokens: 120,
-        temperature: 0
+        max_tokens: 40,
+        temperature: 0,
+        top_p: 0,
+        frequency_penalty: 0,
+        presence_penalty: 0
       })
     });
     const data = JSON.parse(response.getContentText());
@@ -121,7 +128,7 @@ Return ONLY the final brief, coincise, short sentence.
     return valueProp;
   } catch (err) {
     console.log(`LLM API error for ${site}: ${err}`);
-    return `PLACEHOLDER`;
+    return "";
   }
 }
 

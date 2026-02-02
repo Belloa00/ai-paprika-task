@@ -7,9 +7,13 @@
 Prototipo che automatizza lo scouting di acceleratori e startup in Europa e genera value proposition sintetiche per le startup.
 
 ### Funzionalità
-1. **Scouting accelerators:** aggiunge nuovi acceleratori europei in batch di 10.
-2. **Aggiorna startups dagli acceleratori:** per ogni acceleratore, recupera le startup associate e le aggiunge in `startups`.
-3. **Genera value proposition mancanti:** per le startup senza `value_proposition`, visita il sito e genera una frase tipo:  
+1. **Scouting accelerators:** 
+   Aggiunge gli acceleratori al foglio excel "accelerators". Per ognuno riempie i campi website, name, country.
+2. **Aggiorna startups dagli acceleratori:** 
+   Per ogni acceleratore visita (se esistono) i sotto-domini /portfolio, /talent, /startups, /proyectos e 
+   aggiunge allo sheet `startups` ogni startup. Vengono riempiti i campi website, name, country e accelerator.
+3. **Genera value proposition mancanti:** 
+   Vengono generate le `value_proposition` per ogni startup generando in output una frase simile alla seguente:  
    `Startup <X> helps <Target Y> do <What W> so that <Benefit Z>`
 
 ### Struttura Google Sheet
