@@ -47,7 +47,7 @@ Per utilizzare le chiamate all'LLM presente all'interno di alcuni script, è nec
 `Impostazioni progetto` > `Modifica proprietà script` > `Aggiungi proprietà script` e aggiungere la proprietà: `OPENAI_KEY_API` e come valore una API_KEY generata su OpenRouter. Siccome questo è solo un progetto fine a se stesso, la chiave viene inviata separatamente ai diretti interessati, ma di norma non verrebbe inclusa da nessuna parte.
 
 ## Assunzioni e Limiti dell'esercizio
-- La funzione addAccelerators aggiunge solo un set predefinito di acceleratori europei (7 in questo prototipo). Non esegue scraping reale di nuovi acceleratori dal web.
+- La funzione addAccelerators aggiunge solo un set predefinito di acceleratori europei (6 in questo prototipo). Non esegue scraping reale di nuovi acceleratori dal web.
 - Tutti i dati degli acceleratori e delle startup sono considerati unici tramite il campo website. L’URL viene normalizzato. 
 - Invece del classico scraping di link usando `regex` per catturare `href`, il prototipo utilizza un LLM per visualizzare l’HTML dei siti degli acceleratori. Questo consente di recuperare anche le startup indicate solo come testo, senza href. Questa scelta è stata fatta perchè molti siti moderni caricano contenuti via JavaScript o API esterne, quindi eventuali link (href) non sarebbero stati visti, nonostante ci fossero nomi di startups presenti.
 - Vengono visitati solo /portfolio, /talent, /startups, /proyectos come sotto-domini degli acceleratori.
@@ -55,7 +55,10 @@ Per utilizzare le chiamate all'LLM presente all'interno di alcuni script, è nec
 - Le frasi sono generate via LLM seguendo il formato `Startup <X> helps <Target Y> do <What W> so that <Benefit Z>`. Alcune potrebbero non venire generate alla prima iterazione, ma la funzione può essere rilanciata per generare solo quelle mancanti fino al riempimento completo delle celle. Può essere usata più volte anche se manualmente decidiamo di rimuovere alcune value_proposition non di nostro gradimento.
 - Eventuali errori HTTP o API vengono loggati ma non bloccano mai l’esecuzione delle altre righe.
 - Il sistema evita duplicati, ma modifiche manuali ai fogli o cancellazioni parziali possono generare comportamenti inattesi, perciò per testare partivo sempre da fogli (Google Sheet) puliti con solo l'header presente.
+- Il batch di `acceleratori` è stato volutamente ridotto a 6, diversamente il codice Apps Script sarebbe durato 1m in più, il che avrebbe comportato la disconnessione del run-time.
 
+**Motivazione dell’uso dell’LLM per le startup:** 
+In questo prototipo, l’estrazione delle startup dai siti degli acceleratori avviene tramite un LLM, perché molti siti moderni non espongono direttamente i link delle startup nell’HTML statico, ma li caricano dinamicamente tramite JavaScript o API esterne. In un contesto esterno ad Apps Script, avrei, diversamente, evitato l’LLM eseguendo il “rendering” attivo della pagina (headless browser o librerie di scraping avanzate) per visualizzare gli elementi nascosti e recuperarli senza LLM. L’uso dell’LLM è stato un esperimento fatto che mi ha permesso di ottenere comunque i dati delle startup anche quando erano presenti solo solo come testo.
 
 
 

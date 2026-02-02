@@ -9,7 +9,6 @@ function addAccelerators() {
     {website: "https://seedcamp.com", name: "Seedcamp", country: "UK"},
     {website: "https://stationf.co", name: "Station F", country: "France"},
     {website: "https://foundersfactory.com", name: "Foundersfactory", country: "UK"},
-    {website: "https://lanzadera.es/", name: "Lanzadera", country: "Spain"},
     {website: "https://innovx.com/", name: "InnovX", country: "Romania"},
     {website: "https://unicornfactorylisboa.com/", name: "Unicorn", country: "Spain"},
     {website: "https://accelerace.io/", name: "Accelerance", country: "Denmark"}
