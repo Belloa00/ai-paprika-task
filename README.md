@@ -8,13 +8,14 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 
 ### Funzionalità
 1. **Scouting accelerators:** 
-   Aggiunge gli acceleratori al foglio excel "accelerators". Per ognuno riempie i campi website, name, country.
+   Aggiunge gli acceleratori al foglio excel `accelerators`. Per ognuno riempie i campi website, name, country.
 2. **Aggiorna startups dagli acceleratori:** 
-   Per ogni acceleratore visita (se esistono) i sotto-domini /portfolio, /talent, /startups, /proyectos e 
-   aggiunge allo sheet `startups` ogni startup. Vengono riempiti i campi website, name, country e accelerator.
+   Per ogni acceleratore visita (se esistono) i sotto-domini `/portfolio`, `/talent`, `/startups`, `/proyectos` e 
+   aggiunge allo sheet `startups` ogni startup. Vengono riempiti i campi `website`, `name`, `country` e `accelerator`.
 3. **Genera value proposition mancanti:** 
    Vengono generate le `value_proposition` per ogni startup generando in output una frase simile alla seguente:  
    `Startup <X> helps <Target Y> do <What W> so that <Benefit Z>`
+   Questa funzionalità può essere usata più volte per riempire eventuali campi `value_proposition` rimasti vuoti o eliminati manualmente.
 
 ### Struttura Google Sheet
 - **accelerators:** `website`, `name`, `country`
@@ -23,4 +24,6 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 ### Setup
 1. Clona il repository:
 ```bash
-git clone <link_repo>
+git clone https://github.com/Belloa00/ai-paprika-task.git
+
+

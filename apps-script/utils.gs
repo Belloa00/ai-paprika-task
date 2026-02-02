@@ -168,7 +168,7 @@ ${chunk}
         model: "meta-llama/llama-3.3-70b-instruct:free",
         messages: [{ role: "user", content: prompt }],
         max_tokens: 600,
-        temperature: 0
+        temperature: 0.2
       })
     });
     const data = JSON.parse(response.getContentText());
