@@ -1,7 +1,7 @@
 # AI Scouting - Google Sheets + Apps Script
 
 ## Link al Google Sheet
-[LINK ALLO SHEET]
+[\[LINK ALLO SHEET\]](https://docs.google.com/spreadsheets/d/1yl7XdBlTAW7UbHuEFiKx_Md7ty4T-XJBDRn1paHUGK4/edit?gid=1910164549#gid=1910164549)
 
 ## Descrizione
 Prototipo che automatizza lo scouting di acceleratori e startup in Europa e genera value proposition sintetiche per le startup.
