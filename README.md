@@ -18,7 +18,7 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 - **accelerators:** `website`, `name`, `country`
 - **startups:** `website`, `name`, `country`, `accelerator`, `value_proposition`
 
-### Metodo 1 (copia Sheet + Apps Script)
+# Metodo 1 (copia Sheet + Apps Script)
 ## Link al Google Sheet
 - Fai una copia del seguente Google Sheet in quanto è condiviso in sola LETTURA: [\[LINK ALLO SHEET\]](https://docs.google.com/spreadsheets/d/1yl7XdBlTAW7UbHuEFiKx_Md7ty4T-XJBDRn1paHUGK4/edit?gid=1910164549#gid=1910164549)
 - Apri la copia del Google Sheet e dovresti ora avere nel menù in alto la voce `Startup Scouting AI`
@@ -31,7 +31,7 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 - Una volta dentro Apps Script, naviga il menù di sinsitra `Impostazioni progetto > Aggiungi proprietà script` poi nella voce `Proprietà` inserisci `OPENROUTER_KEY_API` e nella voce `Valore` incolla la chiave che ti è stata inviata separatamente del tipo `sk-or-v1-af13eb2ab75ioqetjeq9tu89213p89u739u8tp890aiojugfh732032`
 - Torna nel Google Sheet, e adesso puoi lanciare anche i comandi `Aggiorna startups dagli acceleratori` una volta, mentre il comando `Genera value proposition mancanti` va lanciato più volte finchè non ha generato tutte le `value_proposition`.
 
-### Metodo 2 (copia Sheet + CLASP in locale)
+# Metodo 2 (copia Sheet + CLASP in locale)
 ## Apps Script (Metodo con CLASP)
 - Crea una cartella dove preferisci all'interno del tuo computer (es. cartella `Task_03`)
 - Apri un Terminale (PowerShell su Windows) con permessi di Amministratore
@@ -56,7 +56,7 @@ Se non sai com'è fatto l'ID, ecco un esempio: `https://docs.google.com/spreadsh
 - Comparirà nel tuo Google Sheet (copia) un nuovo menu in alto chiamato: **Startup Scouting AI**
 - Dal menu puoi eseguire le tre azioni principali
 
-### API Key
+# API Key
 Per utilizzare le chiamate all'LLM presente all'interno di alcuni script, è necessario inserire l'API KEY navigando su Apps Script:
 `Impostazioni progetto` > `Modifica proprietà script` > `Aggiungi proprietà script` e aggiungere la proprietà: `OPENROUTER_KEY_API` e come valore una API_KEY generata su OpenRouter. Siccome questo è solo un progetto fine a se stesso, la chiave viene inviata separatamente ai diretti interessati, ma di norma non verrebbe inclusa da nessuna parte.
 
