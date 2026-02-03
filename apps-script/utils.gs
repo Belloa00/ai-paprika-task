@@ -72,7 +72,7 @@ function mergeStartupResults(resultsArrays) {
 
 /* Function to call LLM and make ValueProposition with fallback */
 function makeValue(site, name, htmlContent) {
-  const apiKey = PropertiesService.getScriptProperties().getProperty("OPENAI_KEY_API");
+  const apiKey = PropertiesService.getScriptProperties().getProperty("OPENROUTER_KEY_API");
   function callLLM(snippet) {
     const prompt = `
 You are analyzing the website of a STARTUP.
@@ -136,7 +136,7 @@ Do not rephrase the instruction.
 /* Function that processes html pages to find
 startup names and/or links */
 function extractStartup(url, chunk) {
-  const apiKey = PropertiesService.getScriptProperties().getProperty("OPENAI_KEY_API");
+  const apiKey = PropertiesService.getScriptProperties().getProperty("OPENROUTER_KEY_API");
   const prompt = `
 You are analyzing the HTML of a website that lists STARTUPS.
 

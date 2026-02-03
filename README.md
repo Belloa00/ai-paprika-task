@@ -24,9 +24,9 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 - Apri la copia del Google Sheet e premi su `Estensioni > Apps Script`
 
 ## Apps Script (Metodo con CLASP)
-- Crea una cartella dove preferisci (es. cartella `Task_03`)
+- Crea una cartella dove preferisci all'interno del tuo computer (es. cartella `Task_03`)
 - Apri un Terminale (PowerShell su Windows) con permessi di Amministratore
-- Adesso lancia nel terminale il comando: `cd <percorso cartella Task_03>` e al posto del <percorso cartella Task_03> incolla il percorso assoluto della medesima cartella
+- Adesso lancia nel terminale il comando: `cd <percorso cartella Task_03>` e al posto del `<percorso cartella Task_03>` incolla il percorso assoluto della medesima cartella
 
 - Installa [\[Node.js\]](https://nodejs.org/en/download)
 - Nel terminale con permessi di amministratore installa CLASP con il seguente comando: 
@@ -39,17 +39,17 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 `cd ai-paprika-task`
 - Apri la copia del Google Sheet (copia l'ID del file dall'URL) e poi lancia:
 `clasp create --type sheets --title "Task Paprika AI Scouting" --parentId <ID>`
-al posto di `<ID>` inserisci l'ID preso dall'URL del Google Sheet (la tua copia)
-Se non sai com'è fatto l'ID, ecco un esempio: https://docs.google.com/spreadsheets/d/`ID che devi copiare`/edit#gid=0
+al posto di `<ID>` inserisci l'ID preso dall'URL del Google Sheet (la tua copia).
+Se non sai com'è fatto l'ID, ecco un esempio: `https://docs.google.com/spreadsheets/d/ID DA COPIARE/edit#gid=0`
 - Adesso puoi lanciare il seguente comando per caricare nel tuo Apps Scripts il codice:
 `clasp push`
 - Ricarica la pagina con `F5` per vedere le modifiche
-- Comparirà un nuovo menu in alto chiamato: **Startup Scouting AI**
+- Comparirà nel tuo Google Sheet (copia) un nuovo menu in alto chiamato: **Startup Scouting AI**
 - Dal menu puoi eseguire le tre azioni principali
 
 ## API Key
-Per utilizzare le chiamate all'LLM presente all'interno di alcuni script, è necessario inserire l'API KEY navigando:
-`Impostazioni progetto` > `Modifica proprietà script` > `Aggiungi proprietà script` e aggiungere la proprietà: `OPENAI_KEY_API` e come valore una API_KEY generata su OpenRouter. Siccome questo è solo un progetto fine a se stesso, la chiave viene inviata separatamente ai diretti interessati, ma di norma non verrebbe inclusa da nessuna parte.
+Per utilizzare le chiamate all'LLM presente all'interno di alcuni script, è necessario inserire l'API KEY navigando su Apps Script:
+`Impostazioni progetto` > `Modifica proprietà script` > `Aggiungi proprietà script` e aggiungere la proprietà: `OPENROUTER_KEY_API` e come valore una API_KEY generata su OpenRouter. Siccome questo è solo un progetto fine a se stesso, la chiave viene inviata separatamente ai diretti interessati, ma di norma non verrebbe inclusa da nessuna parte.
 
 ## Assunzioni e Limiti dell'esercizio
 - La funzione addAccelerators aggiunge solo un set predefinito di acceleratori europei (6 in questo prototipo). Non esegue scraping reale di nuovi acceleratori dal web.
@@ -63,7 +63,7 @@ Per utilizzare le chiamate all'LLM presente all'interno di alcuni script, è nec
 - Il batch di `acceleratori` è stato volutamente ridotto a 6, diversamente il codice Apps Script sarebbe durato 1m in più, il che avrebbe comportato la disconnessione del run-time.
 
 **Motivazione dell’uso dell’LLM per le startup:** 
-In questo prototipo, l’estrazione delle startup dai siti degli acceleratori avviene tramite un LLM, perché molti siti moderni non espongono direttamente i link delle startup nell’HTML statico, ma li caricano dinamicamente tramite JavaScript o API esterne. In un contesto esterno ad Apps Script, avrei, diversamente, evitato l’LLM eseguendo il “rendering” attivo della pagina (headless browser o librerie di scraping avanzate) per visualizzare gli elementi nascosti e recuperarli senza LLM. L’uso dell’LLM è stato un esperimento fatto che mi ha permesso di ottenere comunque i dati delle startup anche quando erano presenti solo solo come testo.
+In questo prototipo, l’estrazione delle startup dai siti degli acceleratori avviene tramite un LLM, perché molti siti moderni non espongono direttamente i link delle startup nell’HTML statico, ma li caricano dinamicamente tramite JavaScript o API esterne. In un contesto esterno ad Apps Script, avrei, diversamente, evitato l’LLM eseguendo il “rendering” attivo della pagina (headless browser o librerie di scraping avanzate) per visualizzare gli elementi nascosti e recuperarli senza LLM. L’uso dell’LLM è stato un esperimento fatto che mi ha permesso di ottenere comunque i dati delle startup anche quando erano presenti solo come testo.
 
 
 
