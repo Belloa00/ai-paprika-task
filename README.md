@@ -20,15 +20,20 @@ Prototipo che automatizza lo scouting di acceleratori e startup in Europa e gene
 
 ### Setup
 ## Link al Google Sheet
-Fai una copia del seguente Google Sheet in quanto è condiviso in sola LETTURA: [\[LINK ALLO SHEET\]](https://docs.google.com/spreadsheets/d/1yl7XdBlTAW7UbHuEFiKx_Md7ty4T-XJBDRn1paHUGK4/edit?gid=1910164549#gid=1910164549)
+- Fai una copia del seguente Google Sheet in quanto è condiviso in sola LETTURA: [\[LINK ALLO SHEET\]](https://docs.google.com/spreadsheets/d/1yl7XdBlTAW7UbHuEFiKx_Md7ty4T-XJBDRn1paHUGK4/edit?gid=1910164549#gid=1910164549)
+- Apri la copia del Google Sheet e premi su `Estensioni > Apps Script`
 
 ## Apps Script (Metodo con CLASP)
+- Crea una cartella dove preferisci (es. cartella `Task_03`)
+- Apri un Terminale (PowerShell su Windows) con permessi di Amministratore
+- Adesso lancia nel terminale il comando: `cd <percorso cartella Task_03>` e al posto del <percorso cartella Task_03> incolla il percorso assoluto della medesima cartella
+
 - Installa [\[Node.js\]](https://nodejs.org/en/download)
-- Apri un terminale con permessi di amministratore e installa CLASP con il seguente comando: 
+- Nel terminale con permessi di amministratore installa CLASP con il seguente comando: 
 `npm install -g @google/clasp`
 - Effettua il login all'interno del browser che si aprirà lanciando il comando:
 `clasp login`
-- Clona il repository git con il comando (Per clonare il repository PRIVATO, ):
+- Clona il repository git con il comando:
 `git clone https://github.com/Belloa00/ai-paprika-task.git`
 - Spostati nella cartella con il comando:
 `cd ai-paprika-task`
